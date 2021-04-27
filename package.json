@@ -1,0 +1,19 @@
+{
+  "name": "sukipics",
+  "version": "1.0.0",
+  "description": "A site to get anime/videogame fanarts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfredoPark-48/sukipics.git"
+  },
+  "author": "Alfredo Jeonghyun Park",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alfredoPark-48/sukipics/issues"
+  },
+  "homepage": "https://github.com/alfredoPark-48/sukipics#readme"
+}
