@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/alfredoPark-48/sukipics/issues"
   },
-  "homepage": "https://github.com/alfredoPark-48/sukipics#readme"
+  "homepage": "https://github.com/alfredoPark-48/sukipics#readme",
+  "dependencies": {
+    "danbooru": "^3.1.0",
+    "express": "^4.17.1"
+  }
 }
