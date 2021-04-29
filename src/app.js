@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
 	res.sendFile(publicPath + "index.html");
 });
 
+app.get("/posts", (req, res) => {
+	danbooru.getPost(req.query.tags);
+});
+
 app.listen(port, () => {
 	console.log(`Listening at port ${port}`);
 });
