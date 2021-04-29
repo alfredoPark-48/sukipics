@@ -44,18 +44,33 @@
 				<div class="column">
 					<h4>Get an anime/videogame image!</h4>
 					<p>
-						Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-						Asperiores, quibusdam!
+						Search for a keyword, filter your settings or just press search to
+						get a random image!
 					</p>
 				</div>
 			</div>
 			<form>
-				<input
-					type="text"
-					placeholder="Enter character name or keywords"
-					id="name-search"
-				/>
-				<button>Search</button>
+				<div class="row">
+					<label for="name-search">Enter keywords</label>
+					<input
+						type="text"
+						placeholder="Ex. Blonde"
+						id="name-search"
+						class="u-full-width"
+					/>
+				</div>
+
+				<div class="row">
+					<div class="column one-half">
+						<label for="rating">By Rating</label>
+						<input type="checkbox" name="rating" id="rating" />
+					</div>
+					<div class="column one-half">
+						<label for="explicit">Explicit</label>
+						<input type="checkbox" name="explicit" id="explicit" />
+					</div>
+					<button class="button-primary u-full-width">Search</button>
+				</div>
 			</form>
 			<div class="row" id="picbox"></div>
 		</div>
