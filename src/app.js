@@ -15,11 +15,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/posts", (req, res) => {
-	danbooru.getPost(req.query.tags);
+	danbooru.getPost(req.query.tags, (post) => {
+		res.send(post);
+	});
 });
 
 app.listen(port, () => {
 	console.log(`Listening at port ${port}`);
 });
-
-danbooru.getPost();

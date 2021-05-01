@@ -62,17 +62,20 @@
 
 				<div class="row">
 					<div class="column one-half">
-						<label for="rating">By Rating</label>
-						<input type="checkbox" name="rating" id="rating" />
+						<label for="rank">By Ranking</label>
+						<input type="checkbox" name="rank" id="rank" />
 					</div>
 					<div class="column one-half">
-						<label for="explicit">Explicit</label>
+						<label for="explicit">Explicit (+18)</label>
 						<input type="checkbox" name="explicit" id="explicit" />
 					</div>
-					<button class="button-primary u-full-width">Search</button>
+					<button class="button-primary">Search</button>
 				</div>
 			</form>
-			<div class="row" id="picbox"></div>
+			<div class="row" id="picbox">
+				<div class="row" id="pic"></div>
+				<a href="#" id="download-btn" class="button hidden">Download</a>
+			</div>
 		</div>
 		<footer>
 			<p>

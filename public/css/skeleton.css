@@ -560,4 +560,27 @@ footer {
 	display: flex;
 	justify-content: center;
 	padding: 2rem 0;
+	width: 100%;
+}
+
+/* Hidden element */
+.hidden {
+	opacity: 0;
+	visibility: hidden;
+}
+
+#picbox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 3rem;
+}
+
+#pic {
+	margin-bottom: 3rem;
+}
+
+.picture {
+	object-fit: cover;
 }
