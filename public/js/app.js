@@ -24,8 +24,8 @@ submit.addEventListener("click", (e) => {
 	fetch(`/posts?tags=${search} ${rating} ${order}`).then((res) => {
 		res.json().then((data) => {
 			if (!data) {
-				box.appendChild(<h1>Error getting image! :(</h1>);
-
+				const error = "<h1>Something went wrong with connection! :(</h1>";
+				box.appendChild(error);
 				return;
 			}
 
