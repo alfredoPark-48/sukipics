@@ -6,6 +6,7 @@ const rank = document.querySelector("#rank");
 const explicit = document.querySelector("#explicit");
 const box = document.querySelector("#pic");
 const downloadButton = document.querySelector("#download-btn");
+const picbox = document.querySelector("#picbox");
 
 // Event listener that handles search value retrieval
 submit.addEventListener("click", (e) => {
@@ -29,6 +30,11 @@ submit.addEventListener("click", (e) => {
 				box.appendChild(error);
 				return;
 			}
+
+			console.log(data);
+
+			// Showing total posts retrieved
+			totalPosts(data, firstSearch);
 
 			// Condition to check if picture box currently has an image
 			if (box.hasChildNodes()) {
@@ -54,7 +60,28 @@ const insertImage = (url) => {
 // Function that adds download functionality to image
 const download = (url) => {
 	const type = url.substr(-3);
-	console.log(type);
 	downloadButton.href = url;
+	downloadButton.target = "_blank";
 	downloadButton.download = `sukipic.${type}`;
+};
+
+// Function that shows total posts found
+const totalPosts = (data, search = "") => {
+	const totalPosts = data.totalPosts;
+	const heading = document.createElement("h3");
+
+	// Checking if a keyword was not provided
+	if (!search) {
+		heading.innerHTML = "A random image was retrieved!";
+	} else {
+		heading.innerHTML = `${totalPosts} posts found with "${search}" keyword!`;
+	}
+
+	// Condition to check if picbox has an h3 element
+	if (!picbox.hasChildNodes()) {
+		picbox.insertAdjacentElement("afterbegin", heading);
+	} else {
+		picbox.removeChild(picbox.childNodes[0]);
+		picbox.insertAdjacentElement("afterbegin", heading);
+	}
 };
