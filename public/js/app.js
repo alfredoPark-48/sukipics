@@ -13,7 +13,9 @@ submit.addEventListener("click", (e) => {
 	e.preventDefault();
 
 	// Retrieving value from search bar
-	const search = keyword.value;
+	const firstSearch = keyword.value;
+	const search = firstSearch.replace(" ", "_");
+	console.log(search);
 
 	// Checking for rating
 	const order = rank.checked ? `order:${rank.name}` : "";
@@ -29,12 +31,12 @@ submit.addEventListener("click", (e) => {
 				return;
 			}
 
-			const type = data.file_url.substr(-3);
-			if (type !== "mp4") {
-				insertImage(data.file_url);
-			} else {
-				insertVideo(data.file_url);
+			// Condition to check if picture box currently has an image
+			if (box.hasChildNodes()) {
+				box.removeChild(box.firstChild);
 			}
+
+			insertImage(data.file_url);
 
 			downloadButton.classList.remove("hidden");
 			download(data.file_url);
@@ -50,19 +52,9 @@ const insertImage = (url) => {
 	box.appendChild(img);
 };
 
-const insertVideo = (url) => {
-	const vid = document.createElement("video");
-	const source = document.createElement("source");
-	source.src = "url";
-
-	box.appendChild(vid);
-	vid.appendChild(source);
-};
-
 // Function that adds download functionality to image
 const download = (url) => {
 	const type = url.substr(-3);
-	console.log(type);
 	downloadButton.href = url;
 	downloadButton.download = `sukipic.${type}`;
 };

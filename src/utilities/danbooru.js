@@ -8,6 +8,10 @@ const getPost = (tag = "", callback) =>
 		const index = Math.floor(Math.random() * posts.length);
 		const post = posts[index];
 
+		if (post.file__ext === "zip" || post.file__ext === "mp4") {
+			post = post[index++];
+		}
+
 		callback(post);
 	});
 
