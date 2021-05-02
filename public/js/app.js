@@ -15,7 +15,6 @@ submit.addEventListener("click", (e) => {
 	// Retrieving value from search bar
 	const firstSearch = keyword.value;
 	const search = firstSearch.replace(" ", "_");
-	console.log(search);
 
 	// Checking for rating
 	const order = rank.checked ? `order:${rank.name}` : "";
@@ -55,6 +54,7 @@ const insertImage = (url) => {
 // Function that adds download functionality to image
 const download = (url) => {
 	const type = url.substr(-3);
+	console.log(type);
 	downloadButton.href = url;
 	downloadButton.download = `sukipic.${type}`;
 };
